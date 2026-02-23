@@ -4,10 +4,10 @@ function birthdayCountdown() {
     let currentYear = today.getFullYear();
 
     // Apna birthday yahan set karo (Month - 1 hota hai)
-    let birthday = new Date(currentYear, 1, 21);
+    let birthday = new Date(currentYear, 9, 16);
 
     // 🎉 Check: Agar aaj birthday hai
-    if (today.getDate() === 21 && today.getMonth() === 1) {
+    if (today.getDate() === 16 && today.getMonth() === 9) {
         document.querySelector(".countdown-box").innerHTML = "<h2 style='color:green;'>🎉 It's My Birthday! 🎂</h2>";
         return;  // Countdown stop
     }
