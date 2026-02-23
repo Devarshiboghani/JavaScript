@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<div class="container text-center">
+
+<!-- Start Modal -->
+<div class="modal fade" id="startModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content start-popup">
+      <div class="modal-body text-center">
+        <h2>Welcome to the Quiz! 🎉</h2>
+        <p>Get ready to test your knowledge!</p>
+         <p>Total Questions: 10 | Time: 1 Minute ⏰</p>
+        <button id="startBtn" class="btn btn-primary btn-lg mt-3">Start Quiz</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+       <!-- Quiz Content -->
+       <h1 id="quizTitle">Quiz Competition</h1>
+       <h3 id="timer" style="color:red; display:none;">Time Left: 01:00</h3>
+       
+        <div class="row" id="quizContent" style="display:none;">
+            <div class="column">
+                <div id="question" class="question"></div>
+                <div id="options" class="options"></div>
+            </div>
+        </div>
+
+      <div class="button-group" id="quizButtons" style="display:none;">
+        <button id="prev" class="prevbtn">Prev</button>
+        <button id="next" class="nextbtn">Next</button>
+        <button id="submit" class="nextbtn" style="display:none;">Submit</button>
+      </div>
+
+<!-- Result Modal -->
+<div class="modal fade" id="resultModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content result-popup text-center p-3">
+      <div class="trophy">🏆</div>
+      <h2 class="result-title">Quiz Finished 🎉</h2>
+      <div class="score-circle">
+        <span id="finalScore"></span>
+      </div>
+        <div class="modal-footer justify-content-center">
+        <button type="button" class="restart-btn" onclick="location.reload()">Restart Quiz</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script src="quiz.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

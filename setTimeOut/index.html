@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time Out</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+    <h1 id="count">10</h1>
+    <div class="buttons">
+    <button class="start-btn" onclick="start()">Start</button>
+    <button class="stop-btn" onclick="stop()">Stop</button>
+    </div>
+   </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+<!-- 
+   setTimeout : Run this code after some time
+   setTimeout sirf ak hi bar run hota hai
+   setTimeout sirf ak hi bar exhicute hota hai
+   setTimeout() runs only once.
+   Time is always in milliseconds.
+   To stop it, use clearTimeout().
+
+   Syntax : setTimeout(function, timeperiod);
+   function → the code you want to run
+   timeperiod(delayInMilliseconds) → time to wait (1000 ms = 1 second)
+
+   (1) setTimeout() : Code ko ek baar delay ke baad run karta hai.
+   seyTimeout(() => {
+        console.log("Hello after 3 seconds");
+   }, 3000);
+
+   (2) setInterval() : Code ko bar-bar (repeat) karta hai fixed time ke gap me.
+   setInterval(() => {
+        console.log("Runs every 2 seconds");
+   }, 1000);
+
+   (3) clearTimeout() : setTimeout() ko stop(cancle) karne ke liye hota hai.
+    Syntax : clearTimeout(timeoutID); ya Syntax : clearTimeout(ID);
+    let timer = setTimeout(() => {
+        console.log("Hello after 5 seconds");
+    }, 5000);
+    clearTimeout(timer);
+
+    (4) clearInterval() : setInterval() ko stop (band) karne ke liye hota hai.
+    Syntax : clearInterval(intervalID); ya Syntax : clearInterval(ID);
+    let timer = setInterval(() => {
+        console.log("Running...");
+    }, 1000);
+    clearInterval(timer);
+
+clearTimeout() sirf setTimeout() ko stop karta hai.
+setInterval() ko stop karne ke liye clearInterval() use hota hai.
+Agar timeout already run ho chuka hai, to clearTimeout() ka koi effect nahi hoga.
+
+ -->
