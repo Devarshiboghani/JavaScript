@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease;
+    background: linear-gradient(135deg, #ff9a3c, #ff6a00);
+    background-size: 200% 200%;
+    animation: bgMove 8s ease infinite;
+}
+
+.card{
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+/* Title */
+.card h2{
+    color: #ff7a00;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.search-box{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.search-box input{
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #ffd6b0;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.search-box input:focus{
+    border-color: #ff7a00;
+}
+
+.search-box button{
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff7a00, #ff5500);
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(255,120,0,0.3);
+}
+
+.search-box button:hover{
+     transform: scale(0.95);
+    box-shadow: 0 15px 25px rgba(255,120,0,0.4);
+}
+
+#result{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+#result h3{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+#result p{
+    background: #fff4e6;
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.weather-box{
+    width: 100%;
+    max-width: 500px;   
+    margin: 25px auto;
+    padding: 35px 30px;
+    border-radius: 20px;   
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.2),
+        inset 0 3px 8px rgba(255,255,255,0.2);
+    color: white;
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.weather-box h3{
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.weather-info p{
+    background: #ffffff;
+    color: #ff6a00;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;  
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.weather-info p:hover{
+    transform: translateY(-3px);
+}
+
+.weather-box img{
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.spinner{
+    width: 50px;
+    height: 50px;
+    border: 5px solid #fff;
+    border-top: 5px solid orange;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin{
+    100%{ transform: rotate(360deg); }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bgMove{
+    0%{background-position: left;}
+    50%{background-position: right;}
+    100%{background-position: left;}
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet */
+@media (max-width: 768px){
+
+    body{
+        padding: 20px;
+    }
+
+    .card{
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    .weather-box{
+        padding: 25px 20px;
+    }
+
+    .weather-box h3{
+        font-size: 22px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 480px){
+
+    body{
+        padding: 15px;
+    }
+
+    .card{
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .card h2{
+        font-size: 20px;
+    }
+
+    .search-box input,
+    .search-box button{
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .weather-box{
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .weather-info p{
+        font-size: 13px;
+        padding: 10px;
+    }
+
+}
