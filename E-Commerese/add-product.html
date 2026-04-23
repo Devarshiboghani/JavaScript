@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<nav class="navbar">
+    <h2 class="logo">Admin Panel</h2>
+    <a href="index.html" class="cart-btn">⬅ Back</a>
+</nav>
+
+<div class="admin-box">
+    <h2>Add New Product</h2>
+
+    <form id="productForm">
+        <input type="text" id="pname" placeholder="Product Name" class="search">
+        <input type="number" id="pprice" placeholder="Price" class="search">
+        <input type="text" id="pimage" placeholder="Image URL" class="search">
+        <button type="submit" class="cart-add-btn">Add Product</button>
+    </form>
+    
+    <p id="message"></p>
+
+    <h3>All Products</h3>
+    <div id="productList"></div>
+</div>
+
+<script src="add-product.js"></script>
+</body>
+</html>

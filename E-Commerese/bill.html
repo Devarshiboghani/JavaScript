@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStore Invoice</title>
+    <style>
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+}
+
+.invoice {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.invoice h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+    border-bottom: 2px solid #2575fc;
+    padding-bottom: 10px;
+}
+
+/* Customer Info */
+.invoice p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+th {
+    padding: 15px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+}
+
+td {
+    padding: 12px;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9fbff;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+tbody tr:hover {
+    background: #f9fafb;
+    transition: 0.3s;
+}
+
+td img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #f3f4f6;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+h2 span {
+    color: #2575fc;
+    font-weight: bold;
+}
+
+.complete-btn {
+    display: block;
+    margin: 30px auto 0;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(to right, #00c853, #009624);
+    box-shadow: 0 10px 25px rgba(0, 200, 83, 0.3);
+    transition: all 0.3s ease;
+}
+
+.complete-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 200, 83, 0.5);
+}
+
+.complete-btn:active {
+    transform: scale(0.97);
+}
+
+</style>
+</head>
+<body>
+
+<div class="invoice">
+
+    <h2>🛒 MyStore Invoice</h2>
+
+    <p><strong>Name:</strong> <span id="custName"></span></p>
+
+   <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody id="billItems"></tbody>
+</table>
+
+<h2>Grand Total : ₹<span id="grandTotal">0</span></h2>
+
+<button onclick="completeOrder()" class="complete-btn">✅ Confirm Order</button>
+
+</div>
+
+<script src="bill.js"></script>
+</body>
+</html>

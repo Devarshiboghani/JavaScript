@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2 class="logo">MyStore</h2>
+
+        <input type="text" id="searchInput" class="search" placeholder="Search products...">
+      
+       <div class="nav-links">
+            <a href="cart.html" class="cart-btn">🛒 Cart (<span id="cartCount">0</span>)</a>
+            <a href="add-product.html" class="cart-btn">➕ Add Product</a>
+       </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="flex1">
+            <h1>Welcome to MyStore</h1>
+            <p>Best Deals Just For You</p>
+        </div>
+        <div class="flex2">
+            <img src="https://static.vecteezy.com/system/resources/previews/047/084/204/non_2x/shopping-cart-full-of-items-on-transparent-background-free-png.png" alt="" width="300px" height="300px">
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="products" id="productContainer">
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
