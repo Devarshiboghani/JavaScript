@@ -43,7 +43,7 @@ toggle.onchange = () => {
         subtitle.innerText = "Dark Theme is active - easy on the eyes."
 
         lblLight.classList.remove("active");
-        lblLight.classList.add("active");
+        lblDark.classList.add("active");
 
     } else {
         document.body.classList.remove("dark");
