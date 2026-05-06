@@ -21,8 +21,6 @@ if (theme === "dark") {
     lblDark.classList.add("active");
 
 } else {
-    document.body.classList.remove("dark");
-    toggle.checked = false;
 
     heading.innerText = "Good Morning!";
     icon.innerText = "☀️";
