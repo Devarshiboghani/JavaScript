@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme Toggle</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="card">
+
+        <div class="icon-circle" id="icon">☀️</div>
+
+        <h1 id="heading">Good Night!</h1>
+        <p id="subtitle">Light Theme is active - bright and clear.</p>
+
+        <div class="toggle-row">
+            <span class="lbl active" id="lbl-light">LIGHT</span>
+
+            <label class="switch">
+                <input type="checkbox" id="toggle" checked>
+                <div class="track">
+                    <div class="knob"></div>
+                </div>
+            </label>
+
+            <span class="lbl" id="lbl-dark">DARK</span>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
