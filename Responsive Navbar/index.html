@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Responsive Navbar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Clash+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav id="nav">
+  <a href="#" class="logo">
+    <span class="logo-text">Nexus</span>
+  </a>
+
+  <div class="nav-center">
+    <ul class="pill-nav">
+      <li><a href="#" class="active"><span>Home</span></a></li>
+      <li><a href="#"><span>Products</span></a></li>
+      <li><a href="#"><span>Work</span></a></li>
+      <li><a href="#"><span>Pricing</span></a></li>
+      <li><a href="#"><span>Blog</span></a></li>
+    </ul>
+  </div>
+
+  <div class="nav-right">
+    <button class="icon-btn" title="Notifications">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/>
+      </svg>
+    </button>
+    <button class="icon-btn" title="Search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+      </svg>
+    </button>
+    <button id="themeBtn" class="icon-btn" title="Toggle Theme">🌙</button>
+
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="ln"></span>
+      <span class="ln"></span>
+      <span class="ln"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════ MOBILE MENU ════════ -->
+<div class="mobile-wrap" id="mobileWrap">
+  <div class="mobile-bg" id="mobileBg"></div>
+  <div class="mobile-panel">
+    <ul class="mob-links">
+      <li><a href="#" class="active">Home <span class="mob-arr">→</span></a></li>
+      <li><a href="#">Products <span class="mob-arr">→</span></a></li>
+      <li><a href="#">Work <span class="mob-arr">→</span></a></li>
+      <li><a href="#">Pricing <span class="mob-arr">→</span></a></li>
+      <li><a href="#">Blog <span class="mob-arr">→</span></a></li>
+    </ul>
+    <hr class="mob-divider"/>
+    <div class="mob-bottom">
+      <a href="#" class="mob-btn">Sign In</a>
+      <a href="#" class="mob-btn primary">Get Started →</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
