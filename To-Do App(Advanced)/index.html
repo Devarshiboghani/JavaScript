@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced To-Do App</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="app-title">
+      <i class="ti ti-checkbox"></i>
+      To-Do App
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="nav-tabs">
+
+    <button class="nav-tab active" data-tab="tasks">
+      <i class="ti ti-list"></i>
+      Tasks
+    </button>
+
+    <button class="nav-tab inactive" data-tab="today">
+      <i class="ti ti-calendar"></i>
+      Today
+    </button>
+
+    <button class="nav-tab inactive" data-tab="completed">
+      <i class="ti ti-checks"></i>
+      Completed
+    </button>
+
+    <button class="nav-tab inactive" data-tab="pending">
+      <i class="ti ti-clock"></i>
+      Pending
+    </button>
+
+  </div>
+
+  <div class="content">
+
+    <div class="section-title" id="tabTitle"> Tasks </div>
+
+    <!-- Input -->
+    <input
+      type="text"
+      class="task-input"
+      id="taskInput"
+      placeholder="Enter your task..."
+      maxlength="120"
+    >
+
+    <!-- Add Button -->
+    <button class="add-btn" id="addBtn">
+      <i class="ti ti-plus"></i>
+      Add Task
+    </button>
+
+    <!-- Counter -->
+    <div class="counter">
+      <span id="totalTasks">Total: 0</span>
+      <span id="completedTasks">Completed: 0</span>
+    </div>
+
+    <!-- Task List -->
+    <div class="task-list" id="taskList"></div>
+
+    <!-- Clear -->
+    <div class="clear-row" id="clearRow" style="display:none;">
+      <button class="clear-btn" onclick="clearDone()">
+        <i class="ti ti-trash"></i>
+        Clear Completed
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
