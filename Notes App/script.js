@@ -2,6 +2,8 @@ let notes = JSON.parse(localStorage.getItem("notely")) || [];
 
 let selectedColor = "purple";
 
+let editId = null;
+
 const notesBox = document.getElementById("notes");
 const count = document.getElementById("count");
 const modal = document.getElementById("modalBg");
@@ -59,16 +61,42 @@ function saveNote() {
     return;
   }
 
-  const note = {
-    id: Date.now(),
-    title,
-    content,
-    category,
-    color: selectedColor,
-    time: new Date().toLocaleDateString(),
-  };
+   if(editId){
 
-  notes.unshift(note);
+    notes = notes.map(note => {
+
+      if(note.id === editId){
+
+        return{
+          ...note,
+          title,
+          content,
+          category,
+          color:selectedColor
+        };
+
+      }
+
+      return note;
+
+    });
+
+    editId = null;
+
+  }else{
+
+    const note = {
+      id:Date.now(),
+      title,
+      content,
+      category,
+      color:selectedColor,
+      time:new Date().toLocaleDateString()
+    };
+
+    notes.unshift(note);
+
+  }
 
   localStorage.setItem("notely", JSON.stringify(notes));
 
@@ -118,7 +146,23 @@ function renderNotes() {
     
     <div class="card ${note.color}">
     
+    <div class="card-top">
+
       <h3>${note.title}</h3>
+
+      <div class="actions">
+
+        <button onclick="editNote(${note.id})">
+          ✏️
+        </button>
+
+        <button onclick="deleteNote(${note.id})">
+          🗑️
+        </button>
+
+      </div>
+
+    </div>
 
       <p>${note.content}</p>
 
@@ -139,6 +183,50 @@ function renderNotes() {
     `;
   });
 }
+
+
+  function editNote(id){
+
+  const note = notes.find(note => note.id === id);
+
+  if(!note) return;
+
+  editId = id;
+
+  openModal();
+
+  document.getElementById("title").value = note.title;
+
+  document.getElementById("content").value = note.content;
+
+  document.getElementById("category").value = note.category;
+
+  selectedColor = note.color;
+
+  document.querySelectorAll(".color").forEach((c)=>{
+    c.classList.remove("active");
+  });
+
+  document
+    .querySelector(`[data-color="${note.color}"]`)
+    .classList.add("active");
+
+}
+
+function deleteNote(id){
+
+  const confirmDelete = confirm("Delete this note?");
+
+  if(!confirmDelete) return;
+
+  notes = notes.filter(note => note.id !== id);
+
+  localStorage.setItem("notely", JSON.stringify(notes));
+
+  renderNotes();
+
+}
+
 
 /* SEARCH */
 

@@ -238,6 +238,35 @@ select,
     margin-bottom:20px;
 }
 
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+}
+
+.actions{
+    display:flex;
+    gap:8px;
+}
+
+.actions button{
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:rgba(255,255,255,0.08);
+    color:white;
+    font-size:14px;
+    transition:.2s;
+}
+
+.actions button:hover{
+    background:rgba(255,255,255,0.18);
+}
+
 .bottom{
     display:flex;
     justify-content:space-between;
