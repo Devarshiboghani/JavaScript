@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notes App</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="topbar">
+    <div class="logo">
+      <div class="logo-box">✦</div>
+      <h1>Notely</h1>
+    </div>
+
+    <div class="count">
+      <span id="count">0</span> notes
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="tab active">All</div>
+    <div class="tab">Personal</div>
+    <div class="tab">Work</div>
+    <div class="tab">Ideas</div>
+
+    <div class="right-tools">
+
+      <select id="filterCategory">
+        <option value="All">All Categories</option>
+        <option>Personal</option>
+        <option>Work</option>
+        <option>Ideas</option>
+      </select>
+
+      <button class="add-btn" onclick="openModal()">
+        + New Note
+      </button>
+    </div>
+  </div>
+
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Search your notes...">
+  </div>
+
+  <div class="notes" id="notes"></div>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+
+    <h2>New Note</h2>
+
+    <div class="field">
+      <label>Title</label>
+      <input type="text" id="title">
+    </div>
+
+    <div class="field">
+      <label>Content</label>
+      <textarea id="content"></textarea>
+    </div>
+
+    <div class="row">
+      <div class="field">
+
+        <label>Category</label>
+        <select id="category">
+          <option>Personal</option>
+          <option>Work</option>
+          <option>Ideas</option>
+        </select>
+      </div>
+
+      <div class="field">
+
+        <label>Card Color</label>
+        <div class="colors">
+          <div class="color active" data-color="purple" style="background:#8b5cf6"></div>
+          <div class="color" data-color="pink" style="background:#ff4d9d"></div>
+          <div class="color" data-color="blue" style="background:#2f9bff"></div>
+          <div class="color" data-color="green" style="background:#2ed573"></div>
+          <div class="color" data-color="yellow" style="background:#ffb629"></div>
+          <div class="color" data-color="cyan" style="background:#00d2d3"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="modal-buttons">
+      <button class="cancel" onclick="closeModal()">Cancel</button>
+      <button class="save" onclick="saveNote()">Save Note ✦</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
