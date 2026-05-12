@@ -62,11 +62,8 @@ function saveNote() {
   }
 
    if(editId){
-
     notes = notes.map(note => {
-
       if(note.id === editId){
-
         return{
           ...note,
           title,
@@ -74,11 +71,8 @@ function saveNote() {
           category,
           color:selectedColor
         };
-
       }
-
       return note;
-
     });
 
     editId = null;
@@ -99,9 +93,7 @@ function saveNote() {
   }
 
   localStorage.setItem("notely", JSON.stringify(notes));
-
   renderNotes();
-
   closeModal();
 }
 
@@ -145,39 +137,20 @@ function renderNotes() {
     notesBox.innerHTML += `
     
     <div class="card ${note.color}">
-    
-    <div class="card-top">
-
-      <h3>${note.title}</h3>
-
-      <div class="actions">
-
-        <button onclick="editNote(${note.id})">
-          ✏️
-        </button>
-
-        <button onclick="deleteNote(${note.id})">
-          🗑️
-        </button>
-
+      <div class="card-top">
+        <h3>${note.title}</h3>
+        <div class="actions">
+          <button onclick="editNote(${note.id})">✏️</button>
+          <button onclick="deleteNote(${note.id})">🗑️</button>
+        </div>
       </div>
-
-    </div>
 
       <p>${note.content}</p>
 
       <div class="bottom">
-
-        <div class="badge">
-          ${note.category}
-        </div>
-
-        <div class="time">
-          ${note.time}
-        </div>
-
+        <div class="badge">${note.category}</div>
+        <div class="time">${note.time}</div>
       </div>
-
     </div>
     
     `;
@@ -196,9 +169,7 @@ function renderNotes() {
   openModal();
 
   document.getElementById("title").value = note.title;
-
   document.getElementById("content").value = note.content;
-
   document.getElementById("category").value = note.category;
 
   selectedColor = note.color;
@@ -212,6 +183,7 @@ function renderNotes() {
     .classList.add("active");
 
 }
+
 
 function deleteNote(id){
 
