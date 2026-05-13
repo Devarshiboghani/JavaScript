@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koi Market — Product Filter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <header>
+            <div class="koi-divider">
+                <span></span>
+                <div class="koi-fish">🐠</div>
+                <span></span>
+            </div>
+            <h1><em>Koi Market</em>Artisan Goods</h1>
+            <p>Curated collections inspired by Japanese craft traditions</p>
+        </header>
+        
+        <div class="filter-bar">
+            <div class="search-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off">
+            </div>
+            <div class="filter-divider"></div>
+            <div class="categories" id="categories">
+                <button class="cat-btn active" data-cat="all">All</button>
+                <button class="cat-btn" data-cat="Food">Food</button>
+                <button class="cat-btn" data-cat="Electronic">Electronic</button>
+                <button class="cat-btn" data-cat="Fashion">Fashion</button>
+                <button class="cat-btn" data-cat="Jewellery">Jewellery</button>
+            </div>
+            <div class="filter-divider"></div>
+            <div class="sort-wrap">
+                <select id="sortSelect">
+                    <option value="default">Featured</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                    <option value="rating">Top Rated</option>
+                    <option value="name">A → Z</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="results-meta">
+            <p class="results-count">Showing <strong id="resultCount">0</strong> products</p>
+        </div>
+        
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
